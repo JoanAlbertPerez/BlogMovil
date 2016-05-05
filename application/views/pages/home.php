@@ -5,7 +5,7 @@
     <title>Home Page</title>
   </head>
   <body>
-    <h1>Home</h1>
+    <h1>Bienvenido</h1>
     </p>
   </body>
 </html>

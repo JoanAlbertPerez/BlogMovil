@@ -5,7 +5,7 @@
     <title>About Page</title>
   </head>
   <body>
-    <h1>About</h1>
+    <h1>Sobre nosotros</h1>
     </p>
   </body>
 </html>
