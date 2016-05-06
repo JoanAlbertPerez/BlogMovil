@@ -1,11 +1,13 @@
-<h2><?php echo $title; ?></h2>
-<a href="<?php echo site_url("news/create"); ?>">Crear noticia</a><br>
+<h1 class="titulo"><?php echo $title; ?></h1>
+<div id="content">
 <?php foreach ($news as $news_item): ?>
 
-  <h3><?php echo $news_item['title']; ?></h3>
-  <div class="main">
-    <?php echo $news_item['text']; ?>
+  <div class="noticia">
+    <h3><?php echo $news_item['title']; ?></h3>
+    <div class="main">
+      <?php echo $news_item['text']; ?>
+    </div>
+    <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
   </div>
-  <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
-
 <?php endforeach; ?>
+</div>
