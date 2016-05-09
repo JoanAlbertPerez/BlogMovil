@@ -1,13 +1,24 @@
-<h1 class="titulo"><?php echo $title; ?></h1>
-<div id="content">
-<?php foreach ($news as $news_item): ?>
+<div class="jumbotron">
+  <h1><?php echo $title; ?></h1>
+</div>
+<div>
+  <?php foreach ($news as $news_item): ?>
 
-  <div class="noticia">
-    <h3><?php echo $news_item['title']; ?></h3>
-    <div class="main">
-      <?php echo $news_item['text']; ?>
+    <div class="jumbotron">
+      <h3 id="title-entry"><?php echo $news_item['title']; ?></h3>
+      <div class="container-fluid">
+        <?php echo $news_item['text']; ?>
+      </div>
+      <p class="element-entry"><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
+      <?php
+      if ($this->session->userdata('logueado')) {?>
+        <form class="" action="<?php echo site_url('news/delete'); ?>" method="post">
+          <input type="hidden" name="id" value="<?php echo $news_item['id'] ?>">
+          <input type="submit" name="delete" value="delete">
+        </form>
+        <?php
+      }
+      ?>
     </div>
-    <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>">View article</a></p>
-  </div>
-<?php endforeach; ?>
+  <?php endforeach; ?>
 </div>

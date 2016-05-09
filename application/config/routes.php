@@ -49,6 +49,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['news/delete'] = 'news/delete';
+$route['users/cerrar_sesion'] = 'users/cerrar_sesion';
+$route['users/iniciar_sesion_post'] = 'users/iniciar_sesion_post';
+$route['usuarios/logueado'] = 'usuarios/logueado';
+$route['users/iniciar_sesion'] = 'users/iniciar_sesion';
+$route['usuarios/iniciar_sesion'] = 'usuarios/iniciar_sesion';
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';

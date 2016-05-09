@@ -1,5 +1,5 @@
 /*----------------------------------RESET------------------------*/
-
+/*
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,8 +19,9 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-}
+}*/
 /* HTML5 display-role reset for older browsers */
+/*
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -43,115 +44,162 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+*/
 /*--------------------------CSS----------------------------------*/
-html{
-  font-family: roboto;
-  height: auto;
-  width: auto;
-  background-image: url('../images/back.png');
-  background-repeat: repeat;
+html
+{
+    font-family: roboto;
+
+    width: auto;
+    height: auto;
 }
-#body{
-  min-height: 100%
+#body
+{
+    min-height: 100%;
+
+    background-image: url('../images/back.png');
+    background-repeat: repeat;
 }
 
-#menu{
-  float: left;
-  min-height: 5%;
-  max-height: : 5%;
-  height: 5%;
-  background: #353535;
-  color: white;
-  width: 100%;
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-  list-style-type: none;
-  text-decoration: none;
+.jumbotron
+{
+    margin: 0 5%;
+
+}
+
+#title-entry{
   text-align: center;
-  font-family: roboto;
-
+  margin: 0 0 10 0;
 }
 
-.titulo{
-padding-top: 5%;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 200%;
+.element-entry{
+  text-align: right;
+  margin: 10 10 0 0;
 }
 
-#list{
-  display: block;
-  float: left;
-  top: 0;
-  width: 100%;
+#menu
+{
+    font-family: roboto;
 
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    float: left;
+
+    width: 100%;
+    height: 5%;
+    min-height: 5%;
+    max-height: : 5%;
+
+    list-style-type: none;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: white;
+    background: #353535;
 }
 
-.li-list{
-  position: relative;
-  top: 0;
-  float: left;
-  display: block;
-  width: 20%;
-  height: 100%;
-  font-weight: bold;
-  background: rgb(38, 198, 16);
+.titulo
+{
+    font-size: 200%;
+    font-weight: bolder;
 
-}
-.a-list{
-  text-decoration: none;
-  color: white;
-}
-.li-content{
+    padding-top: 5%;
 
-}
-.title{
-  margin-right: 10%;
+    text-align: center;
 }
 
-.li-list :hover{
-  text-decoration: none;
-  background: #6a6a6a;
-  color: #353535;
+#list
+{
+    top: 0;
+
+    display: block;
+    float: left;
+
+    width: 100%;
 }
 
-#content{
-  height: auto;
-  width: 100%;
-  min-width: 80%;
-  margin: 5% 0 1% 0;
+.li-list
+{
+    font-weight: bold;
 
+    position: relative;
+    top: 0;
+
+    display: block;
+    float: left;
+
+    width: 20%;
+    height: 100%;
+
+    background: rgb(38, 198, 16);
+}
+.a-list
+{
+    text-decoration: none;
+
+    color: white;
 }
 
-.noticia{
-  height: auto;
-  width: 90%;
-  padding: 5%;
-  margin-bottom: 2%;
-  background: rgb(50, 50, 50);
-  color: rgb(255, 255, 255);
+.title
+{
+    margin-right: 10%;
+}
 
+.li-list :hover
+{
+    text-decoration: none;
+
+    color: #353535;
+    background: #6a6a6a;
+}
+
+#content
+{
+    width: 100%;
+    min-width: 80%;
+    height: auto;
+    margin: 5% 0 1% 0;
+}
+
+.noticia
+{
+    width: 90%;
+    height: auto;
+    margin-bottom: 2%;
+    padding: 5%;
+
+    color: rgb(255, 255, 255);
+    background: rgb(50, 50, 50);
 }
 
 
-#footer{
-  float: left;
-  min-height: 10px;
-  max-height: : 50px;
-  background: #181818;
-  color: white;
-  width: 100%;
-  display: block;
-  position: relative;
-  margin-bottom: 0 auto;
-  list-style-type: none;
-  text-decoration: none;
-  font-family: roboto;
+#footer
+{
+    font-family: roboto;
+
+    position: relative;
+
+    display: block;
+    float: left;
+
+    width: 100%;
+    min-height: 10px;
+    max-height: : 50px;
+    margin-bottom: 0 auto;
+
+    list-style-type: none;
+
+    text-decoration: none;
+
+    color: white;
+    background: #181818;
 }
 
-footer em{
-  margin-left: 40%;
+footer em
+{
+    margin-left: 40%;
 }
