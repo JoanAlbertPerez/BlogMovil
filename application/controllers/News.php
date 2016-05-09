@@ -50,9 +50,7 @@ class News extends CI_Controller {
         $this->load->view('templates/footer');
       }else {
         $this->news_model->set_news();
-        $this->load->view('templates/header', $data);
-        $this->load->view('news/success');
-        $this->load->view('templates/footer');
+        redirect('news');
       }
   }
   public function delete()
@@ -61,4 +59,6 @@ class News extends CI_Controller {
     $this->news_model->delete($this->input->post('id'));
     redirect('news');
   }
+
+
 }

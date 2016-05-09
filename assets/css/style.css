@@ -52,54 +52,46 @@ html
 
     width: auto;
     height: auto;
+
+    background-image: url('../images/back.png');
+    background-repeat: repeat;
 }
 #body
 {
     min-height: 100%;
 
-    background-image: url('../images/back.png');
-    background-repeat: repeat;
+    background-color: #6b20a1;
+}
+
+#myNavbar
+{
+    background-color: #6b20a1;
 }
 
 .jumbotron
 {
-    margin: 0 5%;
-
-}
-
-#title-entry{
-  text-align: center;
-  margin: 0 0 10 0;
-}
-
-.element-entry{
-  text-align: right;
-  margin: 10 10 0 0;
-}
-
-#menu
-{
-    font-family: roboto;
-
-    position: relative;
-    top: 0;
-    left: 0;
-
-    display: block;
-    float: left;
-
-    width: 100%;
-    height: 5%;
-    min-height: 5%;
-    max-height: : 5%;
-
-    list-style-type: none;
+    margin: 0 8%;
 
     text-align: center;
-    text-decoration: none;
+}
 
-    color: white;
-    background: #353535;
+#title-entry
+{
+    margin: 0 0 10 0;
+
+    text-align: center;
+}
+
+.formulario-login
+{
+    margin: 10% 30%;
+}
+
+.element-entry
+{
+    margin: 10 10 0 0;
+
+    text-align: right;
 }
 
 .titulo
@@ -122,59 +114,7 @@ html
     width: 100%;
 }
 
-.li-list
-{
-    font-weight: bold;
 
-    position: relative;
-    top: 0;
-
-    display: block;
-    float: left;
-
-    width: 20%;
-    height: 100%;
-
-    background: rgb(38, 198, 16);
-}
-.a-list
-{
-    text-decoration: none;
-
-    color: white;
-}
-
-.title
-{
-    margin-right: 10%;
-}
-
-.li-list :hover
-{
-    text-decoration: none;
-
-    color: #353535;
-    background: #6a6a6a;
-}
-
-#content
-{
-    width: 100%;
-    min-width: 80%;
-    height: auto;
-    margin: 5% 0 1% 0;
-}
-
-.noticia
-{
-    width: 90%;
-    height: auto;
-    margin-bottom: 2%;
-    padding: 5%;
-
-    color: rgb(255, 255, 255);
-    background: rgb(50, 50, 50);
-}
 
 
 #footer

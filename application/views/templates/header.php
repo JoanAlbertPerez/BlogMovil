@@ -35,7 +35,7 @@
 </head>
 <body>
   <div id="body">
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="barra-navegacion">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -51,14 +51,11 @@
             <li><a href="<?php echo site_url("news/create"); ?>">Añadir entrada</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php
-            if ($this->session->userdata('logueado')) {
-              echo site_url("users/logueado");
-            }else {
-              echo site_url("users/iniciar_sesion");
-            }
-             ?>">
-             <span class="glyphicon glyphicon-user"></span> Panel de administracion</a></li>
+          <?php  if ($this->session->userdata('logueado')) { ?>
+            <li><a href="<?php echo site_url('users/cerrar_sesion');?>" <span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+            <?php }else { ?>
+              <li><a href="<?php echo site_url('users/iniciar_sesion');?>" <span class="glyphicon glyphicon-log-in"></span> LogIn</a></li>
+            <?php } ?>
           </ul>
         </div>
       </div>
