@@ -12,16 +12,16 @@ class News extends CI_Controller {
   {
     $data['news_item'] = $this->news_model->get_news($slug);
 
-       if (empty($data['news_item']))
-       {
-               show_404();
-       }
+    if (empty($data['news_item']))
+    {
+      show_404();
+    }
 
-       $data['title'] = $data['news_item']['title'];
+    $data['title'] = $data['news_item']['title'];
 
-       $this->load->view('templates/header', $data);
-       $this->load->view('news/view', $data);
-       $this->load->view('templates/footer');
+    $this->load->view('templates/header', $data);
+    $this->load->view('news/view', $data);
+    $this->load->view('templates/footer');
   }
 
   public function index()
@@ -36,22 +36,22 @@ class News extends CI_Controller {
 
   public function create()
   {
-      $this->load->helper('form');
-      $this->load->library('form_validation');
+    $this->load->helper('form');
+    $this->load->library('form_validation');
 
-      $data['title'] = 'Crear nueva entrada';
+    $data['title'] = 'Crear nueva entrada';
 
-      $this->form_validation->set_rules('title','Title', 'required');
-      $this->form_validation->set_rules('text', 'Text', 'required');
+    $this->form_validation->set_rules('title','Title', 'required');
+    $this->form_validation->set_rules('text', 'Text', 'required');
 
-      if ($this->form_validation->run() === FALSE){
-        $this->load->view('templates/header', $data);
-        $this->load->view('news/create');
-        $this->load->view('templates/footer');
-      }else {
-        $this->news_model->set_news();
-        redirect('news');
-      }
+    if ($this->form_validation->run() === FALSE){
+      $this->load->view('templates/header', $data);
+      $this->load->view('news/create');
+      $this->load->view('templates/footer');
+    }else {
+      $this->news_model->set_news();
+      redirect('news');
+    }
   }
   public function delete()
   {
@@ -60,5 +60,25 @@ class News extends CI_Controller {
     redirect('news');
   }
 
+  public function datatable()
+  {
+    $data['news'] = $this->news_model->get_news();
+
+    if (empty($data['news']))
+    {
+      show_404();
+    }
+
+    $this->load->view('templates/header', $data);
+    $this->load->view('usuarios/logueado', $data);
+    $this->load->view('templates/footer');
+  }
+
+  public function delete_datatable()
+  {
+    $this->load->helper('form');
+    $this->news_model->delete($this->input->post('id'));
+    redirect('News/datatable');
+  }
 
 }

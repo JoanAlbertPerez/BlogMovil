@@ -1,29 +1,7 @@
-<!--
 <html>
 <head>
-<title>CodeIgniter Tutorial</title>
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
-</head>
-<body>
-<div id="body">
-<header id="menu">
-<nav>
-<ul id="list">
-<li class="li-list title"><h2 class="li-content"><?php echo $title; ?><h2 ></li>
-<li class="li-list"><a class="a-list li-content" href="<?php echo site_url("news"); ?>">Inicio</a></li>
-<li class="li-list"><a class="a-list li-content" href="<?php echo site_url("news/create"); ?>">Añadir entrada</a></li>
-</ul>
-</nav>
-</header>
--->
-
-<html>
-<head>
-  <title>CodeIgniter Tutorial</title>
+  <title>Kitmaker Blog</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,900,300,100' rel='stylesheet' type='text/css'>
-  <!-- My CSS-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Optional theme -->
@@ -32,6 +10,17 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- My CSS-->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"/>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#datatable').DataTable( {
+    } );
+  } );
+  </script>
 </head>
 <body>
   <div id="body">
@@ -52,6 +41,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
           <?php  if ($this->session->userdata('logueado')) { ?>
+            <li><a href="<?php echo site_url('users/logueado'); ?>"span class="glyphicon glyphicon-user"> Administración</a></li>            
             <li><a href="<?php echo site_url('users/cerrar_sesion');?>" <span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
             <?php }else { ?>
               <li><a href="<?php echo site_url('users/iniciar_sesion');?>" <span class="glyphicon glyphicon-log-in"></span> LogIn</a></li>

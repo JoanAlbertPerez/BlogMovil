@@ -41,9 +41,7 @@
       if($this->session->userdata('logueado')){
         $data = array();
         $data['nombre'] = $this->session->userdata('nombre');
-        $this->load->view('templates/header');
-        $this->load->view('usuarios/logueado', $data);
-        $this->load->view('templates/footer');
+        redirect('News/datatable');
 
       }else{
         redirect('Users/iniciar_sesion');

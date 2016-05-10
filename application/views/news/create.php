@@ -1,15 +1,21 @@
-<h2 class="titulo"><?php echo $title; ?></h2>
-<div id="content">
 <?php echo validation_errors(); ?>
-
-<?php echo form_open('news/create'); ?>
-<div class="noticia">
-<label for="title">Title</label>
-<input type="input" name="title"><br/>
-
-<label for="text">Text</label>
-<textarea name="text"></textarea><br/>
-<input type="submit" name="submit" value="Create new item">
-</div>
-</form>
+<div class="jumbotron formulario_create">
+  <div class="container-fluid">
+    <h1><?php echo $title; ?></h1>
+    <form class="form-horizontal" role="form" method="post" action="<?php echo site_url("news/create") ?>">
+      <div class="form-group">
+        <div class="col-sm-offset-8 col-sm-2 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+          <input type="input" name="title" placeholder="Titulo"><br/>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea name="text" placeholder="Texto"></textarea><br/>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-8 col-sm-2 col-md-4 col-md-offset-4">
+          <input type="submit" name="submit" value="Create new item">
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
