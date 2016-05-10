@@ -8,6 +8,8 @@ class News extends CI_Controller {
     $this->load->helper('url_helper');
   }
 
+
+  /*Envia la información de la base de datos solicitada a traves del modelo news_model/get_news en forma de array*/
   public function view($slug = NULL)
   {
     $data['news_item'] = $this->news_model->get_news($slug);
@@ -24,6 +26,8 @@ class News extends CI_Controller {
     $this->load->view('templates/footer');
   }
 
+
+  /**/
   public function index()
   {
     $data['news'] = $this->news_model->get_news();
@@ -34,6 +38,9 @@ class News extends CI_Controller {
     $this->load->view('templates/footer');
   }
 
+
+  /*Recibe la información del formulario para crear nuevas noticias, lo valida y envia la información al modelo news_model/set_news para crear asi la nueva noticia
+  Si la noticia es creada con exito abre la pagina principal donde pueden verse todas las noticias*/
   public function create()
   {
     $this->load->helper('form');
@@ -53,6 +60,10 @@ class News extends CI_Controller {
       redirect('news');
     }
   }
+
+
+  /*Recibe la ID de la noticia que el administrador quiere borrar y la envia al modelo news_model/delete para borrarla.
+  Si la noticia es borrada con exito abre la pagina principal donde pueden verse todas las noticias */
   public function delete()
   {
     $this->load->helper('form');
@@ -60,6 +71,8 @@ class News extends CI_Controller {
     redirect('news');
   }
 
+
+  /*Envia la información de la base de datos solicitada a traves del modelo news_model/get_news en forma de array para poder dibujar un datatable*/
   public function datatable()
   {
     $data['news'] = $this->news_model->get_news();
@@ -74,6 +87,9 @@ class News extends CI_Controller {
     $this->load->view('templates/footer');
   }
 
+
+  /*Recibe la ID de la noticia que el administrador quiere borrar y la envia al modelo news_model/delete para borrarla.
+  Si la noticia es borrada con exito abre la pagina con el datatable */
   public function delete_datatable()
   {
     $this->load->helper('form');

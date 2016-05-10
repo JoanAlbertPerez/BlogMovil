@@ -5,6 +5,7 @@ class News_model extends CI_Model{
     $this->load->database();
   }
 
+  /*Sacar información de la bbdd (Part de noticies)*/
   public function get_news($slug = FALSE)
   {
     if ($slug === FALSE)
@@ -17,6 +18,7 @@ class News_model extends CI_Model{
     return $query->row_array();
   }
 
+  /*Insertar información en la bbdd (Noticias nuevas)*/
   public function set_news()
   {
     $this->load->helper('url');
@@ -30,6 +32,8 @@ class News_model extends CI_Model{
     );
     return $this->db->insert('news', $data);
   }
+
+  /*Eliminar noticias de la base de datos*/
   public function delete($id)
   {
     $this->db->where('id', $id);
